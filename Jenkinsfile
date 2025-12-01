@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    REGISTRY_URL = "registry1.local:5000"
+    REGISTRY_URL = "local:5000"
     IMAGE_NAME   = "feb2026"
     IMAGE_TAG    = "latest"
     K8S_NAMESPACE = "feb2026"
