@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                sh "kubectl apply -f k8s-deployment.yaml -n ${K8S_NAMESPACE}"
+                sh "kubectl apply -f Deployment.yaml -n ${K8S_NAMESPACE}"
             }
         }
     }
