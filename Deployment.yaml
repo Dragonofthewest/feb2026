@@ -1,0 +1,27 @@
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feb2026
+  namespace: feb2026
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: feb2026
+  template:
+    metadata:
+      labels:
+        app: feb2026
+    spec:
+      containers:
+        - name: feb2026
+          image: registry.local:5000/feb2026:latest
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 10
